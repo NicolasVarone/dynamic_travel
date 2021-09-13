@@ -1,3 +1,5 @@
+const { default: gsap } = require('gsap/all')
+
 let controller
 let slideScene
 let pageScene
@@ -42,6 +44,10 @@ function animatedSlides() {
     // New animation
     const pageTimeLine = gsap.timeline()
     let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1]
+    if (nextSlide === 'end') {
+      return false
+    }
+
     pageTimeLine.fromTo(nextSlide, { y: '0%' }, { y: '50%' })
     pageTimeLine.fromTo(
       slide,
@@ -68,4 +74,34 @@ function animatedSlides() {
   })
 }
 
+let mouse = document.querySelector('.cursor')
+let mouseText = mouse.querySelector('span')
+
+function cursor(e) {
+  mouse.style.top = e.pageY + 'px'
+  mouse.style.left = e.pageX + 'px'
+}
+
+function activeCursor(e) {
+  const item = e.target
+
+  if (item.id === 'logo' || item.classList.contains('burger')) {
+    mouse.classList.add('nav-active')
+  } else {
+    mouse.classList.remove('nav-active')
+  }
+
+  if (item.classList.contains('explore')) {
+    mouse.classList.add('explore-active')
+    gsap.to('.title-swipe', 1, { y: '0%' })
+    mouseText.innerText = 'Tap'
+  } else {
+    mouse.classList.remove('explore-active')
+    gsap.to('.title-swipe', 1, { y: '100%' })
+    mouseText.innerText = ''
+  }
+}
+
 animatedSlides()
+window.addEventListener('mousemove', cursor)
+window.addEventListener('mouseover', activeCursor)

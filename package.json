@@ -1,0 +1,21 @@
+{
+  "name": "dynamic_travel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasVarone/dynamic_travel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasVarone/dynamic_travel/issues"
+  },
+  "homepage": "https://github.com/NicolasVarone/dynamic_travel#readme"
+}
