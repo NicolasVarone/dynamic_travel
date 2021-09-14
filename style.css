@@ -230,3 +230,68 @@ body {
 body.hide {
   overflow: hidden;
 }
+
+/* Other pages */
+.fashion-1,
+.fashion-2,
+.fashion-3 {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  color: white;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.fashion-image {
+  height: 70vh;
+  flex-basis: 30rem;
+}
+
+.fashion-text {
+  flex: 1;
+  position: relative;
+  flex-basis: 25rem;
+}
+
+.fashion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fashion-text h1 {
+  font-size: 6rem;
+  padding: 5rem 0rem;
+}
+
+.fashion-1 h1 {
+  color: #567ce4;
+}
+
+.fashion-2 h1 {
+  color: #a76ee7;
+}
+
+.fashion-3 h1 {
+  color: #ff8b5d;
+}
+
+.fashion-text p {
+  font-size: 2rem;
+  padding: 2rem 2rem 0rem 0rem;
+  margin-bottom: 10rem;
+}
+
+.fashion-number {
+  font-size: 15rem;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  color: #ffffff;
+  opacity: 0.2;
+}
