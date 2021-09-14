@@ -74,8 +74,9 @@ function animatedSlides() {
   })
 }
 
-let mouse = document.querySelector('.cursor')
-let mouseText = mouse.querySelector('span')
+const mouse = document.querySelector('.cursor')
+const mouseText = mouse.querySelector('span')
+const burger = document.querySelector('.burger')
 
 function cursor(e) {
   mouse.style.top = e.pageY + 'px'
@@ -102,6 +103,26 @@ function activeCursor(e) {
   }
 }
 
+function navToggle(e) {
+  if (!e.target.classList.contains('active')) {
+    e.target.classList.add('active')
+    gsap.to('.line-1', 0.5, { rotate: '45', y: 5, background: 'black' })
+    gsap.to('.line-2', 0.5, { rotate: '-45', y: -5, background: 'black' })
+    gsap.to('#logo', 1, { color: 'black' })
+    gsap.to('.nav-bar', 1, { clipPath: 'circle(2500px at 100% -10%)' })
+    document.body.classList.add('hide')
+  } else {
+    e.target.classList.remove('active')
+    gsap.to('.line-1', 0.5, { rotate: '0', y: 0, background: 'white' })
+    gsap.to('.line-2', 0.5, { rotate: '0', y: 0, background: 'white' })
+    gsap.to('#logo', 1, { color: 'white' })
+    gsap.to('.nav-bar', 1, { clipPath: 'circle(50px at 100% -10%)' })
+    document.body.classList.remove('hide')
+  }
+}
+
+// EventListeners
+burger.addEventListener('click', navToggle)
 animatedSlides()
 window.addEventListener('mousemove', cursor)
 window.addEventListener('mouseover', activeCursor)

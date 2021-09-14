@@ -25,6 +25,8 @@ body {
   width: 80%;
   margin: 0 auto;
   padding: 2rem 0;
+  z-index: 2;
+  position: relative;
 }
 
 .burger {
@@ -223,4 +225,8 @@ body {
 
 .scrollmagic-pin-spacer {
   position: static !important;
+}
+
+body.hide {
+  overflow: hidden;
 }
