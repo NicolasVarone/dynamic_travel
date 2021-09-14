@@ -8,6 +8,11 @@ body {
   background: #17181a;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  position: relative;
+}
+
+main {
+  position: absolute;
 }
 
 #logo {
@@ -294,4 +299,28 @@ body.hide {
   bottom: 10%;
   color: #ffffff;
   opacity: 0.2;
+}
+
+.swipe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.swipe-1 {
+  background: #567ce4;
+  z-index: 5;
+}
+
+.swipe-2 {
+  background: #a76ee7;
+  z-index: 4;
+}
+
+.swipe-3 {
+  background: #ff8b5d;
+  z-index: 3;
 }
